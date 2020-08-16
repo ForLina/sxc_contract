@@ -60,8 +60,9 @@ type Application struct {
 	StreetOfficeOperator      string       `json:"street_office_operator"`       // 街道办审核员
 	StreetOfficeAttachments   []Attachment `json:"street_office_attachments"`    // 街道办审核的相关资料
 
-	Donations    []Donation `json:"donations"`     // 捐赠流水
-	AmountRaised float64    `json:"amount_raised"` //已经募集到的金额
+	//Donations    []Donation `json:"donations"`     // 捐赠流水
+	DonateCounter int     `json:"donate_counter"` // 捐赠计数器
+	AmountRaised  float64 `json:"amount_raised"`  //已经募集到的金额
 
 	RechargeHistory []RechargeHistory `json:"recharge_history"` // 充值历史记录
 
@@ -85,7 +86,11 @@ func (t *Sxc) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 		result, err = hVerify(stub, args)
 	} else if fn == "sVerify" {
 		result, err = sVerify(stub, args)
-	} else if fn == "getUserVote" {
+	} else if fn == "donate" {
+		result, err = donate(stub, args)
+	} else if fn == "getRaised" {
+		result, err = getRaised(stub, args)
+	} else {
 		err = fmt.Errorf("暂时不支持此函数")
 	}
 
@@ -108,6 +113,9 @@ func (t *Sxc) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 //         cardNumber 就诊卡号
 //         descMd5 病情描述的md5
 //         needAmount 资金需求
+
+//请求示例 ["invoke", "applicate", "1", "lyx", "500222199009214433", "995", "3", "8876", "9988123519", "abcdabcdabcdabcdabcdabcdabcdabcd", "4000.32"]
+
 func applicate(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 	if len(args) != 9 {
 		return "", fmt.Errorf("参数目错误，需要 9 个参数, 收到 %d 个", len(args))
@@ -132,7 +140,6 @@ func applicate(stub shim.ChaincodeStubInterface, args []string) (string, error) 
 			return "", fmt.Errorf("无法将需求资金转换为float64类型  %s", args[8])
 		}
 
-		//["invoke", "applicate", "1", "lyx", "500222199009214433", "995", "3", "8876", "9988123519", "abcdabcdabcdabcdabcdabcdabcdabcd", "4000.32"]
 		application = Application{
 			ApplicationNumber: args[0],
 			Name:              args[1],
@@ -300,6 +307,121 @@ func sVerify(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 	}
 
 	return "成功", nil
+}
+
+// 捐赠
+// 入参列表
+//          application_number 合约编号
+//			donator 赠者姓名 匿名/机构名称/姓名
+// 		    amount 捐赠金额
+//          serialNumber 业务流水号
+//          platformID 捐赠者的平台ID
+
+// 范例 ["invoke", "donate", "1", "zhangsan", "300", "sxc202008161449", "platformid008"]
+func donate(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 5 {
+		return "", fmt.Errorf("参数目错误，需要 5 个参数, 收到 %d 个", len(args))
+	}
+
+	application := Application{}
+	applicationNumber := args[0]
+
+	applicationAsBytes, err := stub.GetState(applicationNumber)
+
+	if err != nil {
+		return "", fmt.Errorf("获取账本状态失败 %s", applicationNumber)
+	}
+
+	if applicationAsBytes == nil {
+		return "", fmt.Errorf("未找到此申请的信息 %s", args[0])
+	}
+
+	err = json.Unmarshal(applicationAsBytes, &application)
+	if err != nil {
+		return "", fmt.Errorf("将合约转换为json对象失败")
+	}
+
+	if application.State != 5 {
+		return "", fmt.Errorf("当前合约不能接受捐赠")
+	}
+
+	// 捐赠金额
+	donateAmount, err := strconv.ParseFloat(args[2], 64)
+
+	if donateAmount <= 0 {
+		return "", fmt.Errorf("捐赠金额必须大于等于0")
+	}
+
+	if err != nil {
+		return "", fmt.Errorf("无法将同意金额转换为float64类型  %s", args[2])
+	}
+
+	donateHistory := Donation{
+		Donator:      args[1],
+		Amount:       donateAmount,
+		SerialNumber: args[3],
+		PlatformID:   args[4],}
+
+	donateCounter := application.DonateCounter + 1
+	strDonateCounter := strconv.Itoa(donateCounter)
+
+	donateKey := applicationNumber + "," + strDonateCounter
+
+	donationJsonAsBytes, err := json.Marshal(donateHistory)
+	if err != nil {
+		return "", fmt.Errorf("无法将捐赠历史对象转换为Json对象")
+	}
+
+	err = stub.PutState(donateKey, donationJsonAsBytes)
+	if err != nil {
+		return "", fmt.Errorf("捐赠历史写入账本失败")
+	}
+
+	// 更新捐赠次数计数器
+	application.DonateCounter = donateCounter
+
+	// 更新金额
+	application.AmountRaised = application.AmountRaised + donateAmount
+
+	// 更新余额
+	application.Balance = application.Balance + donateAmount
+
+	_, err = write(stub, application)
+	if err != nil {
+		return "", err
+	}
+
+	return "成功", nil
+}
+
+// 查询申请合约的总捐赠额度
+// 入参 申请编号
+func getRaised(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 1 {
+		return "", fmt.Errorf("参数目错误，需要 1 个参数, 收到 %d 个", len(args))
+	}
+
+	application := Application{}
+	applicationNumber := args[0]
+
+	applicationAsBytes, err := stub.GetState(applicationNumber)
+
+	if err != nil {
+		return "", fmt.Errorf("获取账本状态失败 %s", applicationNumber)
+	}
+
+	if applicationAsBytes == nil {
+		return "", fmt.Errorf("未找到此申请的信息 %s", args[0])
+	}
+
+	err = json.Unmarshal(applicationAsBytes, &application)
+	if err != nil {
+		return "", fmt.Errorf("将合约转换为json对象失败")
+	}
+
+	strAmount := strconv.FormatFloat(application.AmountRaised, 'E', -1, 64)
+	return strAmount, nil
+
 }
 
 // 将Application 对象作为字符串写入合约
