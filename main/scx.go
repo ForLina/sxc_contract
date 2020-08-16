@@ -17,16 +17,18 @@ type Attachment struct {
 	Md5 string `json:"md5"` // 附件的MD5
 }
 
+// 捐赠信息
 type Donation struct {
 	Donator      string  `json:"donator"`       //捐赠者姓名 匿名/机构名称/姓名
 	Amount       float64 `json:"amount"`        //捐赠金额
-	SerialNumber string  `json:"serial_number"` // 业务流水号
+	SerialNumber string  `json:"serial_number"` // 业务流水号 此流水号可以在用户对应的充值系统中查询 例如 支付宝 微信中查询
 	PlatformID   string  `json:"platform_id"`   //捐赠者在平台的ID
 }
 
+// 充值信息
 type RechargeHistory struct {
 	Amount       float64 `json:"amount"`        // 充值金额
-	SerialNumber string  `json:"serial_number"` // 业务流水号
+	SerialNumber string  `json:"serial_number"` // 业务流水号 此流水号可以对应在医院的系统中查询到
 }
 
 // 筹款申请合约
@@ -88,8 +90,6 @@ func (t *Sxc) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 	return shim.Success([]byte(result))
 }
 
-
-
 // 发起申请
 // 入参列表
 //		   applicationNumber 申请编号
@@ -116,7 +116,7 @@ func applicate(stub shim.ChaincodeStubInterface, args []string) (string, error) 
 		return "", fmt.Errorf("已经存在此合约编号 %s", args[0])
 	} else {
 
-		needAmount, err := strconv.ParseFloat(args[8],64)
+		needAmount, err := strconv.ParseFloat(args[8], 64)
 
 		if err != nil {
 			return "", fmt.Errorf("无法将需求资金转换为float64类型  %s", args[8])
@@ -125,15 +125,17 @@ func applicate(stub shim.ChaincodeStubInterface, args []string) (string, error) 
 		//["invoke", "applicate", "1", "lyx", "500222199009214433", "995", "3", "8876", "9988123519", "abcdabcdabcdabcdabcdabcdabcdabcd", "4000.32"]
 		application = Application{
 			ApplicationNumber: args[0],
-			Name: args[1],
-			ID: args[2],
-			HospitalCode: args[3],
-			DepartmentCode: args[4],
+			Name:              args[1],
+			ID:                args[2],
+			HospitalCode:      args[3],
+			DepartmentCode:    args[4],
 
 			StreetOfficeCode: args[5],
-			CardNumber: args[6],
-			DescMd5: args[7],
-			NeedAmount: needAmount,
+			CardNumber:       args[6],
+			DescMd5:          args[7],
+			NeedAmount:       needAmount,
+
+			State: 1,
 		}
 	}
 
