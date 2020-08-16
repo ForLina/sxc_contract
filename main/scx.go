@@ -53,9 +53,11 @@ type Application struct {
 	// 5.街道办审核通过 6.筹款中 7.筹款完成 8.资金发放完成
 
 	HospitalApproveAmount float64      `json:"hospital_approve_amount"` // 医院审核同意金额
+	HospitalOperator      string       `json:"hospital_operator"`       // 医院的审核员
 	HospitalAttachments   []Attachment `json:"hospital_attachments"`    // 医院审核的相关资料
 
 	StreetOfficeApproveAmount float64      `json:"street_office_approve_amount"` // 街道办同意的金额
+	StreetOfficeOperator      string       `json:"street_office_operator"`       // 街道办审核员
 	StreetOfficeAttachments   []Attachment `json:"street_office_attachments"`    // 街道办审核的相关资料
 
 	Donations    []Donation `json:"donations"`     // 捐赠流水
@@ -79,6 +81,10 @@ func (t *Sxc) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 
 	if fn == "applicate" {
 		result, err = applicate(stub, args)
+	} else if fn == "hVerify" {
+		result, err = hVerify(stub, args)
+	} else if fn == "sVerify" {
+		result, err = sVerify(stub, args)
 	} else if fn == "getUserVote" {
 		err = fmt.Errorf("暂时不支持此函数")
 	}
@@ -112,6 +118,10 @@ func applicate(stub shim.ChaincodeStubInterface, args []string) (string, error) 
 
 	applicationAsBytes, err := stub.GetState(applicationNumber)
 
+	if err != nil {
+		return "", fmt.Errorf("获取账本状态失败 %s", applicationNumber)
+	}
+
 	if applicationAsBytes != nil {
 		return "", fmt.Errorf("已经存在此合约编号 %s", args[0])
 	} else {
@@ -139,18 +149,174 @@ func applicate(stub shim.ChaincodeStubInterface, args []string) (string, error) 
 		}
 	}
 
+	_, err = write(stub, application)
+	if err != nil {
+		return "", err
+	}
+
+	return "成功", nil
+}
+
+// 医院审核
+// 入参列表
+//          application_number 合约编号
+//			operator 审核人员姓名
+// 		    agree 是否同意 0不同意 1同意
+//          approveAmount 同意的金额
+//          attachments 附件列表 json string [{"id":string}, {"md5":string}]
+
+// 范例 ["invoke", "hVerify", "1", "lengtingxue", "1", "3500", "[{\"id\":\"attachment_id1\", \"md5\":\"md123456md123456md123456md123456\"}]"]
+func hVerify(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 5 {
+		return "", fmt.Errorf("参数目错误，需要 5 个参数, 收到 %d 个", len(args))
+	}
+
+	application := Application{}
+	applicationNumber := args[0]
+
+	applicationAsBytes, err := stub.GetState(applicationNumber)
+
+	if err != nil {
+		return "", fmt.Errorf("获取账本状态失败 %s", applicationNumber)
+	}
+
+	if applicationAsBytes == nil {
+		return "", fmt.Errorf("未找到此申请的信息 %s", args[0])
+	}
+
+	err = json.Unmarshal(applicationAsBytes, &application)
+	if err != nil {
+		return "", fmt.Errorf("将合约转换为json对象失败")
+	}
+
+	if application.State != 1 {
+		return "", fmt.Errorf("合约已经审核过啦")
+	}
+
+	approveAmount, err := strconv.ParseFloat(args[3], 64)
+
+	if err != nil {
+		return "", fmt.Errorf("无法将同意金额转换为float64类型  %s", args[3])
+	}
+
+	var attachments []Attachment
+	err = json.Unmarshal([]byte(args[4]), &attachments)
+	if err != nil {
+		return "", fmt.Errorf("无法将附件列表转换为附件对象 %s", args[4])
+	}
+
+	if args[2] == "0" {
+		application.State = 2 //审核不通过
+		application.HospitalAttachments = attachments
+		application.HospitalOperator = args[1]
+	} else if args[2] == "1" {
+		application.State = 3 // 交给街道办审核
+		application.HospitalAttachments = attachments
+		application.HospitalOperator = args[1]
+		application.HospitalApproveAmount = approveAmount
+	} else {
+		return "", fmt.Errorf("同意与否参数错误 %s", args[2])
+	}
+
+	_, err = write(stub, application)
+	if err != nil {
+		return "", err
+	}
+
+	return "成功", nil
+}
+
+// 街道办审核
+// 入参列表
+//          application_number 合约编号
+//			operator 审核人员姓名
+// 		    agree 是否同意 0不同意 1同意
+//          approveAmount 同意的金额
+//          attachments 附件列表 json string [{"id":string}, {"md5":string}]
+
+// 范例 ["invoke", "sVerify", "1", "liuliming", "1", "3500", "[{\"id\":\"attachment_id2\", \"md5\":\"md223456md123456md123456md123456\"}]"]
+func sVerify(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 5 {
+		return "", fmt.Errorf("参数目错误，需要 5 个参数, 收到 %d 个", len(args))
+	}
+
+	application := Application{}
+	applicationNumber := args[0]
+
+	applicationAsBytes, err := stub.GetState(applicationNumber)
+
+	if err != nil {
+		return "", fmt.Errorf("获取账本状态失败 %s", applicationNumber)
+	}
+
+	if applicationAsBytes == nil {
+		return "", fmt.Errorf("未找到此申请的信息 %s", args[0])
+	}
+
+	err = json.Unmarshal(applicationAsBytes, &application)
+	if err != nil {
+		return "", fmt.Errorf("将合约转换为json对象失败")
+	}
+
+	if application.State == 1 {
+		return "", fmt.Errorf("等待医院审核")
+	}
+
+	if application.State == 2 {
+		return "", fmt.Errorf("此申请已被医院拒绝")
+	}
+
+	if application.State != 3 {
+		return "", fmt.Errorf("此申请已经审核过了")
+	}
+
+	approveAmount, err := strconv.ParseFloat(args[3], 64)
+
+	if err != nil {
+		return "", fmt.Errorf("无法将同意金额转换为float64类型  %s", args[3])
+	}
+
+	var attachments []Attachment
+	err = json.Unmarshal([]byte(args[4]), &attachments)
+	if err != nil {
+		return "", fmt.Errorf("无法将附件列表转换为附件对象 %s", args[4])
+	}
+
+	application.StreetOfficeAttachments = attachments
+	application.StreetOfficeOperator = args[1]
+
+	if args[2] == "0" {
+		application.State = 4 //审核不通过
+	} else if args[2] == "1" {
+		application.State = 5 // 审核通过 可以公示了
+		application.HospitalApproveAmount = approveAmount
+	} else {
+		return "", fmt.Errorf("同意与否参数错误 %s", args[2])
+	}
+
+	_, err = write(stub, application)
+	if err != nil {
+		return "", err
+	}
+
+	return "成功", nil
+}
+
+// 将Application 对象作为字符串写入合约
+func write(stub shim.ChaincodeStubInterface, application Application) (string, error) {
 	//将 Application 对象 转为 JSON 对象
 	applicationJsonAsBytes, err := json.Marshal(application)
 	if err != nil {
 		return "", fmt.Errorf("无法将申请对象转换为Json对象")
 	}
 
-	err = stub.PutState(applicationNumber, applicationJsonAsBytes)
+	err = stub.PutState(application.ApplicationNumber, applicationJsonAsBytes)
 	if err != nil {
 		return "", fmt.Errorf("申请写入账本失败")
 	}
 
-	return "成功", nil
+	return "", nil
+
 }
 
 func main() {
