@@ -23,8 +23,8 @@ const (
 	HospitalReject     = 2 // 医院审核不通过
 	Raising            = 3 // 筹款中
 	Raised             = 4 // 筹款完成 筹集到了指定金额
-	//Cheat              = 5 // 涉及合约欺诈
-	//RepaymentCompleted = 6 // 还款完成
+	Cheat              = 5 // 涉及合约欺诈
+	RepaymentCompleted = 6 // 还款完成
 )
 
 const (
@@ -55,6 +55,8 @@ type LoanInfo struct {
 	LoanNumber       string `json:"loan_number"`       // 贷款单号
 	FirstRepayment   string `json:"first_repayment"`   // 第一次还款的月份
 	TotalMonth       string `json:"total_month"`       // 总共需要还款多少期
+	MoneyReceived    bool   `json:"money_received"`    // 是否已经收到放款
+	ReceiveSerialNumber string `json:"receive_serial_number"` // 收款流水号
 	RepaymentHistory string `json:"repayment_history"` // 还款历史列表 存储还款流水号即可
 }
 
@@ -102,7 +104,7 @@ type Application struct {
 	Balance float64 `json:"balance"` //合约余额
 }
 
-func (t *Sxc) Init(stub shim.ChaincodeStubInterface) peer.Response {
+func (t *Sxc) Init(	stub shim.ChaincodeStubInterface) peer.Response {
 	return shim.Success(nil)
 }
 
@@ -124,6 +126,8 @@ func (t *Sxc) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 		result, err = getRaised(stub, args)
 	case "loan":
 		result, err = loan(stub, args)
+	case "receivedLoan":
+		result, err = receivedLoan(stub, args)
 	default:
 		err = fmt.Errorf("暂时不支持此函数")
 	}
@@ -395,36 +399,75 @@ func loan(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 		return "", fmt.Errorf("贷款金额不能超过已经募集到了的金额  %s", args[1])
 	}
 
-	LoanInfo := LoanInfo{
+	loanInfo := LoanInfo{
 		LoanNumber:       args[2],
 		FirstRepayment:   args[3],
 		TotalMonth:       args[4],
+		MoneyReceived:    false,
 		RepaymentHistory: "[]"}
 
 	loanCounter := application.LoanCounter + 1
 	strLoanCounter := strconv.Itoa(loanCounter)
 
-	loanKey := applicationNumber + "," + strLoanCounter
 
-	loanJsonAsBytes, err := json.Marshal(LoanInfo)
+	err = setLoanInfo(stub, applicationNumber, strLoanCounter, loanInfo)
 	if err != nil {
-		return "", fmt.Errorf("无法贷款信息转换为Json对象")
-	}
-
-	err = stub.PutState(loanKey, loanJsonAsBytes)
-	if err != nil {
-		return "", fmt.Errorf("贷款信心写入账本失败")
+		return "贷款信息写入合约失败", err
 	}
 
 	// 更新捐赠次数计数器
 	application.LoanCounter = loanCounter
-
 	// 更新总贷款金额
 	application.LoanTotal = application.LoanTotal + loanAmount
 
 	_, err = write(stub, application)
 	if err != nil {
 		return "", err
+	}
+
+	returnStr := "{\"counter\":" + strconv.Itoa(loanCounter) + "}"
+	return returnStr, nil
+}
+
+// 收到银行放款
+// 入参列表
+//          application_number 合约编号
+// 		    loan_number 贷款单号
+//          load_counter 计数器
+//          serial_number 放款入账流水号
+
+// 范例 ["invoke", "receivedLoan", "1", "sxc202008161449", "1", "serial_number2020-08-22 20:31:06"]
+func receivedLoan(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 4 {
+		return "", fmt.Errorf("参数目错误，需要 4 个参数, 收到 %d 个", len(args))
+	}
+
+	applicationNumber := args[0]
+	application, err := getApplication(stub, applicationNumber)
+	if err != nil {
+		return "", err
+	}
+
+	if application.State == Cheat {
+		return "", fmt.Errorf("涉嫌欺诈,不予放款")
+	}
+
+	strLoanCounter := args[2]
+	loanInfo, err := getLoanInfo(stub, applicationNumber, strLoanCounter)
+	if err != nil {
+		return "获取贷款信息失败", err
+	}
+
+	if loanInfo.LoanNumber != args[1] {
+		return "贷款单号不匹配", fmt.Errorf("贷款单号不匹配")
+	}
+
+	loanInfo.MoneyReceived = true
+	loanInfo.ReceiveSerialNumber = args[3]
+
+	err = setLoanInfo(stub, applicationNumber, strLoanCounter, loanInfo)
+	if err != nil {
+		return "贷款信息写入合约失败", err
 	}
 
 	return "成功", nil
@@ -465,6 +508,35 @@ func getApplication(stub shim.ChaincodeStubInterface, applicationNumber string) 
 	}
 
 	return application, nil
+}
+
+func getLoanInfo(stub shim.ChaincodeStubInterface, applicationNumber string, loanCounter string) (LoanInfo, error){
+	loanInfo := LoanInfo{}
+	loanKey := applicationNumber + "," + loanCounter
+	loanInfoAsBytes, err := stub.GetState(loanKey)
+	if err != nil {
+		return loanInfo, fmt.Errorf("获取贷款信息失败 %s,%s", applicationNumber, loanCounter)
+	}
+	err = json.Unmarshal(loanInfoAsBytes, &loanInfo)
+	if err != nil {
+		return loanInfo, fmt.Errorf("贷款信息json串转换为贷款信息对象失败")
+	}
+	return loanInfo, nil
+}
+
+func setLoanInfo(stub shim.ChaincodeStubInterface, applicationNumber string, loanCounter string, loanInfo LoanInfo) error {
+	loanKey := applicationNumber + "," + loanCounter
+
+	loanJsonAsBytes, err := json.Marshal(loanInfo)
+	if err != nil {
+		return fmt.Errorf("无法贷款信息转换为Json字符串")
+	}
+
+	err = stub.PutState(loanKey, loanJsonAsBytes)
+	if err != nil {
+		return fmt.Errorf("贷款信心写入账本失败")
+	}
+	return nil
 }
 
 func main() {
