@@ -328,7 +328,9 @@ func donate(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 }
 
 // 查询申请合约的总捐赠额度
-// 入参 申请编号
+// 入参
+//			application_number 合约编号
+// 范例 ["invoke", "getRaised", "1"]
 func getRaised(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 	if len(args) != 1 {
 		return "", fmt.Errorf("参数目错误，需要 1 个参数, 收到 %d 个", len(args))
@@ -365,7 +367,7 @@ func getRaised(stub shim.ChaincodeStubInterface, args []string) (string, error) 
 //          first_repayment 第一次还款的月份
 //  		total_month 总共需要还款多少期
 
-// 范例 ["invoke", "loan", "1", "10000", "sxc202008161449", "2020-09", "24"]
+// 范例 ["invoke", "loan", "1", "200", "sxc202008161449", "2020-09", "24"]
 func loan(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 	if len(args) != 5 {
 		return "", fmt.Errorf("参数目错误，需要 5 个参数, 收到 %d 个", len(args))
@@ -381,16 +383,16 @@ func loan(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 		return "", fmt.Errorf("当前合约不能申请贷款")
 	}
 
-	// 捐赠金额
-	loanAmount, err := strconv.ParseFloat(args[2], 64)
+	// 贷款金额
+	loanAmount, err := strconv.ParseFloat(args[1], 64)
 	if err != nil {
-		return "", fmt.Errorf("无法将贷款金额转换为float64类型  %s", args[2])
+		return "", fmt.Errorf("无法将贷款金额转换为float64类型  %s", args[1])
 	}
 	if loanAmount <= 0 {
-		return "", fmt.Errorf("贷款金额需要是正数  %s", args[2])
+		return "", fmt.Errorf("贷款金额需要是正数  %s", args[1])
 	}
 	if loanAmount+application.LoanTotal > application.AmountRaised {
-		return "", fmt.Errorf("贷款金额不能超过已经募集到了的金额  %s", args[2])
+		return "", fmt.Errorf("贷款金额不能超过已经募集到了的金额  %s", args[1])
 	}
 
 	LoanInfo := LoanInfo{
