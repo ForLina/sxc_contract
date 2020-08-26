@@ -58,6 +58,7 @@ type LoanInfo struct {
 	MoneyReceived    bool   `json:"money_received"`    // 是否已经收到放款
 	ReceiveSerialNumber string `json:"receive_serial_number"` // 收款流水号
 	RepaymentHistory string `json:"repayment_history"` // 还款历史列表 存储还款流水号即可
+	LoanAmount float64 `json:"loan_amount"` // 贷款金额
 }
 
 // 充值信息
@@ -84,22 +85,23 @@ type Application struct {
 	// 此项可以单独补充
 	ApplicationAttachments []Attachment `json:"application_attachments"` // 用户申请的时候提交的资料
 
-	State int //流程状态 1.待医院审核 2.医院审核不通过 3.待街道办审核 4.街道办审核不通过
-	// 5.街道办审核通过 6.筹款中 7.筹款完成 8.资金发放完成
+	State int // 参考常量定义 业务流程状态
 
 	HospitalApproveAmount float64      `json:"hospital_approve_amount"` // 医院审核同意金额
 	HospitalOperator      string       `json:"hospital_operator"`       // 医院的审核员
 	HospitalAttachments   []Attachment `json:"hospital_attachments"`    // 医院审核的相关资料
 
-	//Donations    []Donation `json:"donations"`     // 捐赠流水
 	DonateCounter int     `json:"donate_counter"` // 捐赠计数器
 	AmountRaised  float64 `json:"amount_raised"`  //已经募集到的金额
 
 	// 贷款信息
 	LoanCounter int     `json:"loan_counter"` //贷款计数器 可以多次贷款
 	LoanTotal   float64 `json:"loan_total"`   //总共已经贷款多少
+	ReceivedLoanTotal float64  `json:"received_loan_total"` // 总共已经收到银行放款的总额度
 
-	RechargeHistory []RechargeHistory `json:"recharge_history"` // 充值历史记录
+	// 充值到就诊卡的信息
+	RechargeCounter int `json:"recharge_counter"` // 充值计数器
+	RechargeTotal float64 `json:"recharge_total"` // 累计充值金额
 
 	Balance float64 `json:"balance"` //合约余额
 }
@@ -128,6 +130,12 @@ func (t *Sxc) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 		result, err = loan(stub, args)
 	case "receivedLoan":
 		result, err = receivedLoan(stub, args)
+	case "setCheat":
+		result, err = setCheat(stub, args)
+	case "recharge":
+		result, err = recharge(stub, args)
+	case "getApplicationInfo":
+		result, err = getApplicationInfo(stub, args)
 	default:
 		err = fmt.Errorf("暂时不支持此函数")
 	}
@@ -138,6 +146,7 @@ func (t *Sxc) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 
 	return shim.Success([]byte(result))
 }
+
 
 // 发起申请
 // 入参列表
@@ -404,7 +413,8 @@ func loan(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 		FirstRepayment:   args[3],
 		TotalMonth:       args[4],
 		MoneyReceived:    false,
-		RepaymentHistory: "[]"}
+		RepaymentHistory: "[]",
+		LoanAmount: loanAmount}
 
 	loanCounter := application.LoanCounter + 1
 	strLoanCounter := strconv.Itoa(loanCounter)
@@ -462,6 +472,10 @@ func receivedLoan(stub shim.ChaincodeStubInterface, args []string) (string, erro
 		return "贷款单号不匹配", fmt.Errorf("贷款单号不匹配")
 	}
 
+	if loanInfo.MoneyReceived {
+		return "已经收到放款", fmt.Errorf("已经收到放款")
+	}
+
 	loanInfo.MoneyReceived = true
 	loanInfo.ReceiveSerialNumber = args[3]
 
@@ -470,7 +484,117 @@ func receivedLoan(stub shim.ChaincodeStubInterface, args []string) (string, erro
 		return "贷款信息写入合约失败", err
 	}
 
+	application.ReceivedLoanTotal = application.ReceivedLoanTotal + loanInfo.LoanAmount
+	_, err = write(stub, application)
+	if err != nil {
+		return "", err
+	}
+
 	return "成功", nil
+}
+
+// 设置此申请为欺诈申请
+// 入参列表
+//          application_number 合约编号
+func setCheat(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 1 {
+		return "", fmt.Errorf("参数目错误，需要 1 个参数, 收到 %d 个", len(args))
+	}
+
+	applicationNumber := args[0]
+	application, err := getApplication(stub, applicationNumber)
+	if err != nil {
+		return "", err
+	}
+
+	application.State = Cheat
+
+	_, err = write(stub, application)
+	if err != nil {
+		return "", err
+	}
+
+	return "成功", nil
+}
+
+// 为用户的就诊卡充值
+// 入参列表
+//          application_number 合约编号
+//          serial_number 充值流水号
+//          amount 充值金额
+
+// 范例 ["invoke", "recharge", "1", "sxc202008161449", "100"]
+func recharge(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 3 {
+		return "", fmt.Errorf("参数目错误，需要 3 个参数, 收到 %d 个", len(args))
+	}
+
+	applicationNumber := args[0]
+	application, err := getApplication(stub, applicationNumber)
+	if err != nil {
+		return "", err
+	}
+
+	if application.State == Cheat {
+		return "", fmt.Errorf("涉嫌欺诈,不予充值")
+	}
+
+	amount, err := strconv.ParseFloat(args[2], 64)
+	if err != nil {
+		return "", fmt.Errorf("无法将充值金额转换为float64类型  %s", args[1])
+	}
+
+	newCounter := application.RechargeCounter + 1
+
+	rechargeHistory := RechargeHistory{
+		Amount:amount,
+		SerialNumber:args[2],
+	}
+
+	rechargeKey := applicationNumber + "," + strconv.Itoa(newCounter)
+
+	rechargeHistoryJsonAsBytes, err := json.Marshal(rechargeHistory)
+	if err != nil {
+		return "", fmt.Errorf("无法将申请对象转换为Json对象")
+	}
+
+	err = stub.PutState(rechargeKey, rechargeHistoryJsonAsBytes)
+	if err != nil {
+		return "", fmt.Errorf("充值历史写入账本失败")
+	}
+
+	application.RechargeTotal = application.RechargeTotal + amount
+	application.RechargeCounter = newCounter
+	_, err = write(stub, application)
+	if err != nil {
+		return "", err
+	}
+
+	return "成功", nil
+}
+
+// 获取合约详情
+// 入参列表
+//          application_number 合约编号
+
+// 范例 ["invoke", "getApplicationInfo", "1"]
+func getApplicationInfo(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	if len(args) != 1 {
+		return "", fmt.Errorf("参数目错误，需要 1 个参数, 收到 %d 个", len(args))
+	}
+
+	applicationNumber := args[0]
+	applicationAsBytes, err := stub.GetState(applicationNumber)
+
+	if err != nil {
+		return "获取账本状态失败", fmt.Errorf("获取账本状态失败 %s", applicationNumber)
+	}
+
+	if applicationAsBytes == nil {
+		return "未找到此申请的信息", fmt.Errorf("未找到此申请的信息 %s", applicationNumber)
+	}
+
+	return string(applicationAsBytes), nil
 }
 
 // 将Application 对象作为字符串写入合约
