@@ -1,13 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2022-12-15T09:55:53.339Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.6.2" etag="3oPIrdGxGs2FueLHFnZT" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-16T02:18:06.253Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="_5NMQV7nZegMNUdZRBOe" version="20.7.2" type="github">
   <diagram id="ESpQUyC3KSfqQ8lTwqV3" name="充值流程">
-    <mxGraphModel dx="1097" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="478" dy="228" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-1" value="区块链/ETH/BSC/TRON" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-1" value="区块链/ETH/BSC/TRON" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="220" y="110" width="120" height="330" as="geometry" />
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-11" value="监听充值" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="ObqIZauQ5AW_0LlvtDVD-1" target="ObqIZauQ5AW_0LlvtDVD-8">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-11" value="监听充值" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="ObqIZauQ5AW_0LlvtDVD-1" target="ObqIZauQ5AW_0LlvtDVD-8" edge="1">
           <mxGeometry x="-1" relative="1" as="geometry">
             <mxPoint x="60" y="100" as="sourcePoint" />
             <mxPoint x="140" y="100" as="targetPoint" />
@@ -17,29 +17,27 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-12" value="2" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="ObqIZauQ5AW_0LlvtDVD-11">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-12" value="2" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="ObqIZauQ5AW_0LlvtDVD-11" connectable="0" vertex="1">
           <mxGeometry x="-1" relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-2" value="用户" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="170" width="30" height="60" as="geometry" />
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-2" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="50" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-5" value="充值到公链" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1" target="ObqIZauQ5AW_0LlvtDVD-1">
-          <mxGeometry x="-1" relative="1" as="geometry">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-5" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="1" target="ObqIZauQ5AW_0LlvtDVD-1" edge="1">
+          <mxGeometry x="-0.646" y="10" relative="1" as="geometry">
             <mxPoint x="110" y="180" as="sourcePoint" />
             <mxPoint x="210" y="180" as="targetPoint" />
             <Array as="points">
               <mxPoint x="230" y="180" />
               <mxPoint x="230" y="180" />
             </Array>
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-6" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="ObqIZauQ5AW_0LlvtDVD-5">
-          <mxGeometry x="-1" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-8" value="充值监听系统" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-8" value="充值监听系统" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="440" y="110" width="120" height="330" as="geometry" />
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-14" value="通知资金增加" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="ObqIZauQ5AW_0LlvtDVD-8" target="ObqIZauQ5AW_0LlvtDVD-13">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-14" value="通知资金增加" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="ObqIZauQ5AW_0LlvtDVD-8" target="ObqIZauQ5AW_0LlvtDVD-13" edge="1">
           <mxGeometry x="-1" relative="1" as="geometry">
             <mxPoint x="60" y="130" as="sourcePoint" />
             <mxPoint x="220" y="130" as="targetPoint" />
@@ -49,11 +47,17 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-15" value="3" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="ObqIZauQ5AW_0LlvtDVD-14">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-15" value="3" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="ObqIZauQ5AW_0LlvtDVD-14" connectable="0" vertex="1">
           <mxGeometry x="-1" relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ObqIZauQ5AW_0LlvtDVD-13" value="资金系统" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="ObqIZauQ5AW_0LlvtDVD-13" value="资金系统" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="650" y="110" width="120" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="70mZ4sykX8ifF7S5-0wB-8" value="用户" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="110" width="60" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="70mZ4sykX8ifF7S5-0wB-11" value="1.充值到公链" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="130" y="158" width="90" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
