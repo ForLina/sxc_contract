@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-16T06:25:57.042Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="W6fyuJGdjbNbmDHT4QoQ" version="20.7.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-12-16T06:29:48.019Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="WefK_6J_uuKWpnEN_va7" version="20.7.2" type="github" pages="4">
   <diagram id="ESpQUyC3KSfqQ8lTwqV3" name="充值流程">
     <mxGraphModel dx="1247" dy="594" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -70,7 +70,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="KtYX7X_tvWMYoIS5i0bi-1" value="商城系统" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="110" width="150" height="330" as="geometry" />
+          <mxGeometry x="220" y="110" width="100" height="330" as="geometry" />
         </mxCell>
         <mxCell id="KtYX7X_tvWMYoIS5i0bi-2" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
           <mxGeometry x="90" y="50" width="30" height="60" as="geometry" />
@@ -106,23 +106,20 @@
         </mxCell>
         <mxCell id="KtYX7X_tvWMYoIS5i0bi-8" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
           <mxGeometry x="-0.646" y="10" relative="1" as="geometry">
-            <mxPoint x="304" y="197" as="sourcePoint" />
-            <mxPoint x="473.5" y="197" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="424" y="197" />
-              <mxPoint x="424" y="197" />
-            </Array>
+            <mxPoint x="269.85483870967755" y="196.0000000000001" as="sourcePoint" />
+            <mxPoint x="489.5000000000002" y="196.0000000000001" as="targetPoint" />
+            <Array as="points" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="KtYX7X_tvWMYoIS5i0bi-14" value="3.返回购买结果" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+        <mxCell id="KtYX7X_tvWMYoIS5i0bi-14" value="3.返回购买结果" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1" target="KtYX7X_tvWMYoIS5i0bi-1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="489.5000000000002" y="246.0000000000001" as="sourcePoint" />
             <mxPoint x="294.85483870967755" y="246.0000000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="R5ByVrYjmwX-BQnX4drk-1" value="游戏" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="725" y="110" width="150" height="330" as="geometry" />
+          <mxGeometry x="725" y="110" width="75" height="330" as="geometry" />
         </mxCell>
         <mxCell id="R5ByVrYjmwX-BQnX4drk-2" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
           <mxGeometry x="595" y="50" width="30" height="60" as="geometry" />
