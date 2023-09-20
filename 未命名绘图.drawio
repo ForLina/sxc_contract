@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-09-20T03:15:35.809Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="H6dFcPV5kIBzqdbcs6ng" version="21.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-20T03:24:35.691Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="W4Urw_htTbg4o4jFvnaT" version="21.2.7" type="github">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
     <mxGraphModel dx="681" dy="364" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -23,9 +23,9 @@
           <mxGeometry x="473" y="40" width="100" height="300" as="geometry" />
         </mxCell>
         <mxCell id="kJpjSAabP5wzoCGnjcpb-6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="kJpjSAabP5wzoCGnjcpb-1">
-          <mxGeometry x="46" y="118" width="10" height="40" as="geometry" />
+          <mxGeometry x="46" y="118" width="10" height="92" as="geometry" />
         </mxCell>
-        <mxCell id="kJpjSAabP5wzoCGnjcpb-7" value="&amp;nbsp;2.使用A的公钥对Msg加密" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="kJpjSAabP5wzoCGnjcpb-6" parent="kJpjSAabP5wzoCGnjcpb-1">
+        <mxCell id="kJpjSAabP5wzoCGnjcpb-7" value="&amp;nbsp;3.使用A的公钥对Msg加密" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="kJpjSAabP5wzoCGnjcpb-6" parent="kJpjSAabP5wzoCGnjcpb-1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="51" y="98" as="sourcePoint" />
             <Array as="points">
@@ -33,13 +33,30 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="kJpjSAabP5wzoCGnjcpb-8" value="3.调用步骤1中合约的send方法，将加密&lt;br&gt;后的Msg发送至区块链网络" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1" source="kJpjSAabP5wzoCGnjcpb-1" target="aM9ryv3xv72pqoxQDRHE-5">
-          <mxGeometry x="0.84" y="-50" relative="1" as="geometry">
+        <mxCell id="kJpjSAabP5wzoCGnjcpb-8" value="4.调用步骤1中合约的send方法，将加密&lt;br&gt;后的Msg发送至区块链网络，&lt;br&gt;触发EventReceive事件" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1" source="kJpjSAabP5wzoCGnjcpb-1">
+          <mxGeometry x="0.9175" y="-70" relative="1" as="geometry">
             <mxPoint x="450" y="220" as="sourcePoint" />
-            <mxPoint x="610" y="220" as="targetPoint" />
+            <mxPoint x="280" y="250" as="targetPoint" />
             <Array as="points">
               <mxPoint x="370" y="250" />
               <mxPoint x="370" y="250" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kJpjSAabP5wzoCGnjcpb-14" value="2.监听合约EventReceive事件" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="150" as="targetPoint" />
+            <mxPoint x="90" y="150" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kJpjSAabP5wzoCGnjcpb-15" value="5.监听到EventReceive事件，&lt;br&gt;用私钥解密得到消息明文" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.7778" y="-60" relative="1" as="geometry">
+            <mxPoint x="270" y="280" as="sourcePoint" />
+            <mxPoint x="90" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="180" y="280" />
+              <mxPoint x="180" y="280" />
             </Array>
             <mxPoint as="offset" />
           </mxGeometry>
