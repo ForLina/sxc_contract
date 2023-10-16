@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" modified="2023-10-16T09:21:31.163Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="My7WAPLw74Wf7xM10NDD" version="22.0.4" type="github">
+  <diagram name="第 1 页" id="azGX_UAA160RPo5hjSwU">
+    <mxGraphModel dx="954" dy="510" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YlLI9UdCv8EwhFES0nyd-2" target="YlLI9UdCv8EwhFES0nyd-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-2" value="网络层：节点发现、节点同步、节点监控" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="320" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-3" value="共识层：接收交易、产生区块、共识" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="240" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-4" value="合约引擎：交易校验、交易执行" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="160" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-5" value="存储层：区块链数据存取、状态数据库存取" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="80" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-6" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="320" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-8" value="P2P" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="335" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-9" value="Https" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="567.5" y="335" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-10" value="TLS" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="626" y="335" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="YlLI9UdCv8EwhFES0nyd-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="361" y="270" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-12" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="481" y="240" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-13" value="Raft" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="494.5" y="255" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-14" value="BFT" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="562" y="255" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-15" value="POA" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620.5" y="255" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="YlLI9UdCv8EwhFES0nyd-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="359" y="190" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-17" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="479" y="160" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-18" value="EVM" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="492.5" y="175" width="77.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-19" value="WASM" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="598" y="175" width="77.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="YlLI9UdCv8EwhFES0nyd-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="110" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-22" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="80" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-23" value="LevelDB" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="493.5" y="95" width="77.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlLI9UdCv8EwhFES0nyd-24" value="RocksDB" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="599" y="95" width="77.5" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
