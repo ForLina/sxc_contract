@@ -1,9 +1,123 @@
-<mxfile host="app.diagrams.net" modified="2023-11-13T08:13:40.062Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" version="22.1.0" etag="F7drX1MIWS0h8AXbf9HO" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-13T08:24:09.610Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="ZUk3yCyQ4yQIpR8KPeX4" version="22.1.0" type="github">
   <diagram name="第 1 页" id="wrElIc0J3-vcsjwYYvaI">
-    <mxGraphModel>
+    <mxGraphModel dx="1122" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-1" value="用户A应用端" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="110" y="100" width="100" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-35" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="g6J9051ywHuHmLKc-1Pv-1">
+          <mxGeometry x="45" y="410" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-36" value="6.使用私钥解密合约&lt;br&gt;事件，得到消息" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="g6J9051ywHuHmLKc-1Pv-35" parent="g6J9051ywHuHmLKc-1Pv-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="450" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="50" y="450" />
+              <mxPoint x="80" y="450" />
+              <mxPoint x="80" y="420" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-2" value="用户A服务器端" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="290" y="100" width="100" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-27" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="g6J9051ywHuHmLKc-1Pv-2">
+          <mxGeometry x="45" y="290" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-28" value="3.写入本地数据库" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="g6J9051ywHuHmLKc-1Pv-27" parent="g6J9051ywHuHmLKc-1Pv-2" source="g6J9051ywHuHmLKc-1Pv-27">
+          <mxGeometry x="-0.0024" relative="1" as="geometry">
+            <mxPoint x="60" y="310" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="80" y="290" />
+              <mxPoint x="80" y="340" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-3" value="区块链网络" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="470" y="100" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-4" value="1.部署邮箱合约" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="g6J9051ywHuHmLKc-1Pv-2">
+          <mxGeometry x="0.0028" width="80" relative="1" as="geometry">
+            <mxPoint x="160" y="170" as="sourcePoint" />
+            <mxPoint x="240" y="170" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-5" value="2.部署邮箱合约" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0028" width="80" relative="1" as="geometry">
+            <mxPoint x="340" y="190" as="sourcePoint" />
+            <mxPoint x="520" y="190" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-6" value="3.返回邮箱合约地址" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="g6J9051ywHuHmLKc-1Pv-2">
+          <mxGeometry x="0.0028" relative="1" as="geometry">
+            <mxPoint x="520" y="220" as="sourcePoint" />
+            <mxPoint x="440" y="220" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-8" value="4.返回邮箱合约地址" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0028" relative="1" as="geometry">
+            <mxPoint x="340" y="249.6" as="sourcePoint" />
+            <mxPoint x="160" y="249.6" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-9" value="用户B" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-10" value="5.以其他方式通知邮箱合约地址给B" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="g6J9051ywHuHmLKc-1Pv-9">
+          <mxGeometry x="0.0024" width="80" relative="1" as="geometry">
+            <mxPoint x="160" y="290" as="sourcePoint" />
+            <mxPoint x="340" y="290" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="390" y="270" width="40" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-13" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="110" y="322" width="680" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-14" value="合约初始化" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="380" y="300" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-15" value="1.用A的公钥加密Msg得到Msg1，&lt;br&gt;发送至A的邮箱合约" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0028" width="80" relative="1" as="geometry">
+            <mxPoint x="700" y="369" as="sourcePoint" />
+            <mxPoint x="519.7" y="369" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-31" value="2.监听邮箱合约事件" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="g6J9051ywHuHmLKc-1Pv-3">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="340" y="390" as="sourcePoint" />
+            <mxPoint x="420" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-32" value="4.查询合约事件" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="g6J9051ywHuHmLKc-1Pv-2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="160" y="480" as="sourcePoint" />
+            <mxPoint x="240" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-33" value="5.返回合约事件" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="g6J9051ywHuHmLKc-1Pv-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="510" as="sourcePoint" />
+            <mxPoint x="260" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-37" value="我" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="100" y="582" width="680" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="g6J9051ywHuHmLKc-1Pv-39" value="聊天交互" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="375" y="558" width="70" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
