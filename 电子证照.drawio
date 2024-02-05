@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-05T03:41:01.815Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="TJkHyu1Nc_gdwNTMPgDr" version="23.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-05T03:42:49.353Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="uXuE7hH8Fa9mJ4C0iwZ4" version="23.0.2" type="github">
   <diagram name="第 1 页" id="mlK23XWwbsO1bdcoR-AP">
-    <mxGraphModel dx="1590" dy="2087" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1735" dy="2171" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -23,10 +23,10 @@
           <mxGeometry x="64.9236493374108" y="195" width="106.4322120285423" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-11" value="交换数据库" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.direct_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-13">
-          <mxGeometry x="63.859327217125376" y="120" width="106.4322120285423" height="60" as="geometry" />
+          <mxGeometry x="63.859327217125376" y="102" width="106.4322120285423" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-12" value="接口服务" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-13">
-          <mxGeometry x="63.859327217125376" y="270" width="106.4322120285423" height="60" as="geometry" />
+          <mxGeometry x="63.859327217125376" y="290" width="106.4322120285423" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-14" value="" style="group;fontSize=16;" vertex="1" connectable="0" parent="Ue5ERrAMfguvgAMBEAyv-38">
           <mxGeometry x="202.22120285423037" width="202.22120285423037" height="430" as="geometry" />
@@ -36,15 +36,6 @@
         </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-16" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;采集&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-14">
           <mxGeometry y="39.47" width="202.22120285423034" height="390.53" as="geometry" />
-        </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-17" value="文件" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-14">
-          <mxGeometry x="64.9236493374108" y="195" width="106.4322120285423" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-18" value="交换数据库" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.direct_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-14">
-          <mxGeometry x="63.859327217125376" y="120" width="106.4322120285423" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-19" value="接口服务" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-14">
-          <mxGeometry x="63.859327217125376" y="270" width="106.4322120285423" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-20" value="" style="group;fontSize=16;" vertex="1" connectable="0" parent="Ue5ERrAMfguvgAMBEAyv-38">
           <mxGeometry x="404.44240570846074" width="202.22120285423037" height="430" as="geometry" />
@@ -73,32 +64,17 @@
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-28" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;采集&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-26">
           <mxGeometry y="39.47" width="202.22120285423034" height="390.53" as="geometry" />
         </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-29" value="文件" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-26">
-          <mxGeometry x="64.9236493374108" y="195" width="106.4322120285423" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-30" value="交换数据库" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.direct_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-26">
-          <mxGeometry x="63.859327217125376" y="120" width="106.4322120285423" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-31" value="接口服务" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-26">
-          <mxGeometry x="63.859327217125376" y="270" width="106.4322120285423" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-32" value="" style="group;fontSize=16;" vertex="1" connectable="0" parent="Ue5ERrAMfguvgAMBEAyv-38">
           <mxGeometry x="804.7787971457695" width="202.22120285423037" height="430" as="geometry" />
         </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-33" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;上链&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-32">
           <mxGeometry width="202.22120285423034" height="39.47" as="geometry" />
         </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-34" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;采集&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-32">
+        <mxCell id="Ue5ERrAMfguvgAMBEAyv-34" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-32">
           <mxGeometry y="39.47" width="202.22120285423034" height="390.53" as="geometry" />
         </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-35" value="文件" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-32">
-          <mxGeometry x="64.9236493374108" y="195" width="106.4322120285423" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-36" value="交换数据库" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.direct_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-32">
-          <mxGeometry x="63.859327217125376" y="120" width="106.4322120285423" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-37" value="接口服务" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-32">
-          <mxGeometry x="63.859327217125376" y="270" width="106.4322120285423" height="60" as="geometry" />
+        <mxCell id="Ue5ERrAMfguvgAMBEAyv-39" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;区块链&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-32">
+          <mxGeometry x="72.22120285423046" y="80" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
