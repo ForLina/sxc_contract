@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-06T00:53:25.730Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="Kjp-gaJRyUITv8ZstJnj" version="23.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-06T02:48:51.555Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="FD_6L68xwvkdnH3ckFnI" version="23.0.2" type="github">
   <diagram name="第 1 页" id="mlK23XWwbsO1bdcoR-AP">
-    <mxGraphModel dx="1272" dy="1904" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="763" dy="1610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -82,6 +82,9 @@
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-69" value="OFD文件" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-20">
           <mxGeometry x="41.5" y="239" width="113.5" height="63.37" as="geometry" />
         </mxCell>
+        <mxCell id="Ue5ERrAMfguvgAMBEAyv-70" value="电子证照" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="Ue5ERrAMfguvgAMBEAyv-20">
+          <mxGeometry x="68.27759429153929" y="60" width="60" height="30" as="geometry" />
+        </mxCell>
         <mxCell id="Ue5ERrAMfguvgAMBEAyv-26" value="" style="group;fontSize=16;" vertex="1" connectable="0" parent="Ue5ERrAMfguvgAMBEAyv-38">
           <mxGeometry x="602.5575942915393" width="202.22120285423037" height="430" as="geometry" />
         </mxCell>
@@ -121,8 +124,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ue5ERrAMfguvgAMBEAyv-57" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="420" y="300" width="120" height="60" as="geometry" />
+        <mxCell id="Ue5ERrAMfguvgAMBEAyv-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.001;entryY=0.469;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;" edge="1" parent="Ue5ERrAMfguvgAMBEAyv-38" source="Ue5ERrAMfguvgAMBEAyv-42" target="Ue5ERrAMfguvgAMBEAyv-58">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="387" y="308" />
+              <mxPoint x="387" y="215" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
