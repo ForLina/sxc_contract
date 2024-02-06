@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-06T03:39:39.802Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="YWh6mRoQOp6UdjECImxt" version="23.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-06T03:41:55.234Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="mCUq3oZdGT5xDHEEU26Y" version="23.0.2" type="github">
   <diagram name="第 1 页" id="RS2oqep8soCqUfkU9GSQ">
     <mxGraphModel dx="1781" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -55,14 +55,23 @@
         <mxCell id="eS6wFpmXcqXi8iL8XK0C-41" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-39">
           <mxGeometry x="120" width="860" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="eS6wFpmXcqXi8iL8XK0C-42" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;政务服务网&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-39">
-          <mxGeometry x="140" y="10" width="250" height="60" as="geometry" />
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-57" value="" style="group" vertex="1" connectable="0" parent="eS6wFpmXcqXi8iL8XK0C-39">
+          <mxGeometry x="140" y="10" width="800" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="eS6wFpmXcqXi8iL8XK0C-43" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;行政审批系统&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-39">
-          <mxGeometry x="410" y="10" width="250" height="60" as="geometry" />
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-42" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;政务服务网&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-57">
+          <mxGeometry width="143.5897435897436" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="eS6wFpmXcqXi8iL8XK0C-44" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;部门业务系统&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-39">
-          <mxGeometry x="690" y="10" width="250" height="60" as="geometry" />
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-43" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;行政审批系统&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-57">
+          <mxGeometry x="152.82051282051282" width="144.6153846153846" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-44" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;部门业务系统&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-57">
+          <mxGeometry x="306.66666666666663" width="165.1282051282051" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-55" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;区块链数据库&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-57">
+          <mxGeometry x="481.025641025641" width="154.87179487179486" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-56" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;区块链数据库&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-57">
+          <mxGeometry x="645.1282051282051" width="154.87179487179486" height="60" as="geometry" />
         </mxCell>
         <mxCell id="eS6wFpmXcqXi8iL8XK0C-45" value="" style="group" vertex="1" connectable="0" parent="eS6wFpmXcqXi8iL8XK0C-51">
           <mxGeometry y="358" width="980" height="80" as="geometry" />
