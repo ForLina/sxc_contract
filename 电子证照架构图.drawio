@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-06T03:38:29.119Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="RPXD2xtwKF8yM7xCWvNI" version="23.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-06T03:39:39.802Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="YWh6mRoQOp6UdjECImxt" version="23.0.2" type="github">
   <diagram name="第 1 页" id="RS2oqep8soCqUfkU9GSQ">
-    <mxGraphModel dx="1694" dy="501" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1781" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -81,6 +81,15 @@
         </mxCell>
         <mxCell id="eS6wFpmXcqXi8iL8XK0C-50" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;其他部门或地域电子证照数据源&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-45">
           <mxGeometry x="637" y="10" width="303" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-53" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="eS6wFpmXcqXi8iL8XK0C-51">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="559" y="355" as="sourcePoint" />
+            <mxPoint x="559" y="315" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eS6wFpmXcqXi8iL8XK0C-54" value="数据采集" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="eS6wFpmXcqXi8iL8XK0C-51">
+          <mxGeometry x="473" y="320" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
