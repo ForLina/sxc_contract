@@ -1,9 +1,33 @@
-<mxfile host="app.diagrams.net" modified="2024-03-06T06:16:20.237Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="24.0.2" etag="2BLJMd32fO88JlVDlAh6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-06T06:42:49.873Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="j45khl9P8JmQ4nxzgZ5q" version="24.0.2" type="github">
   <diagram name="第 1 页" id="WKl6gbDjXFLEuy6e8V0B">
-    <mxGraphModel>
+    <mxGraphModel dx="636" dy="361" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;数据层&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-10" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="180" y="520" width="490" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
+          <mxGeometry width="490" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-4" value="LevelDB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
+          <mxGeometry x="10" y="10" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-5" value="MySQL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
+          <mxGeometry x="108" y="10" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-6" value="ElasticSearch" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
+          <mxGeometry x="201" y="10" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-8" value="Redis" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
+          <mxGeometry x="299" y="10" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-9" value="MongoDB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
+          <mxGeometry x="397" y="10" width="80" height="20" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
