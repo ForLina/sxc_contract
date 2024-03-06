@@ -1,14 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2024-03-06T06:42:49.873Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="j45khl9P8JmQ4nxzgZ5q" version="24.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-06T07:19:01.131Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="E-3Ebk-E8yRmZ4QtvscE" version="24.0.2" type="github">
   <diagram name="第 1 页" id="WKl6gbDjXFLEuy6e8V0B">
     <mxGraphModel dx="636" dy="361" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;数据层&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="520" width="90" height="40" as="geometry" />
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-11" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="80" y="520" width="590" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-10" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="180" y="520" width="490" height="40" as="geometry" />
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;数据层&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-11">
+          <mxGeometry width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-10" value="" style="group" vertex="1" connectable="0" parent="0hXrH_I9RKG1Sx_e95cJ-11">
+          <mxGeometry x="100" width="490" height="40" as="geometry" />
         </mxCell>
         <mxCell id="0hXrH_I9RKG1Sx_e95cJ-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
           <mxGeometry width="490" height="40" as="geometry" />
@@ -27,6 +30,42 @@
         </mxCell>
         <mxCell id="0hXrH_I9RKG1Sx_e95cJ-9" value="MongoDB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-10">
           <mxGeometry x="397" y="10" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-12" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="80" y="380" width="590" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-13" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;基础服务层&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-12">
+          <mxGeometry width="90" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-14" value="" style="group" vertex="1" connectable="0" parent="0hXrH_I9RKG1Sx_e95cJ-12">
+          <mxGeometry x="100" width="490" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-14">
+          <mxGeometry width="490" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-19" value="配置中心/注册中心&lt;div&gt;Nacos&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-14">
+          <mxGeometry x="260" y="10" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-20" value="基础组件&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;监控服务&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;邮件服务&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;推送服务&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-14">
+          <mxGeometry x="350" y="10" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-29" value="" style="group" vertex="1" connectable="0" parent="0hXrH_I9RKG1Sx_e95cJ-14">
+          <mxGeometry x="10" y="10" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-16" value="&lt;b&gt;消息总线&lt;/b&gt;&lt;br&gt;Kafka" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-29">
+          <mxGeometry width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-28" value="&lt;b&gt;服务调用&lt;/b&gt;&lt;div&gt;Ribbon/Feign&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-29">
+          <mxGeometry y="50" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-31" value="" style="group" vertex="1" connectable="0" parent="0hXrH_I9RKG1Sx_e95cJ-14">
+          <mxGeometry x="110" y="10" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-17" value="负载均衡/熔断&lt;div&gt;Springcloud Gateway&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-31">
+          <mxGeometry width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0hXrH_I9RKG1Sx_e95cJ-30" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;微服务&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0hXrH_I9RKG1Sx_e95cJ-31">
+          <mxGeometry y="70" width="140" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
