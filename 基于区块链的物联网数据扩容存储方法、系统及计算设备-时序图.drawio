@@ -1,9 +1,35 @@
-<mxfile host="app.diagrams.net" modified="2024-03-18T07:33:52.769Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="24.0.6" etag="11w1b4b2T2kfKf4_Q6_h" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-18T07:36:58.999Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="jXt7wpodkKfZlt93qNVY" version="24.0.6" type="github">
   <diagram name="第 1 页" id="SpHlt_mc99bfXXJPw3TF">
-    <mxGraphModel>
+    <mxGraphModel dx="954" dy="541" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="WYgyEmMnPs9ZYoiqRBrQ-1" value="物联网设备" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="100" y="60" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WYgyEmMnPs9ZYoiqRBrQ-5" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="WYgyEmMnPs9ZYoiqRBrQ-1">
+          <mxGeometry x="45" y="70" width="10" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WYgyEmMnPs9ZYoiqRBrQ-2" value="智能合约" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="270" y="60" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WYgyEmMnPs9ZYoiqRBrQ-3" value="数据网关" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="440" y="60" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WYgyEmMnPs9ZYoiqRBrQ-4" value="存储设备" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="610" y="60" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WYgyEmMnPs9ZYoiqRBrQ-6" value="1.请求存储路径" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.515;entryY=0.257;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="WYgyEmMnPs9ZYoiqRBrQ-2" parent="1" source="WYgyEmMnPs9ZYoiqRBrQ-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="190" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WYgyEmMnPs9ZYoiqRBrQ-7" value="2.返回存储路径" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=-5;" edge="1" parent="1" target="WYgyEmMnPs9ZYoiqRBrQ-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="484.5" y="180" as="targetPoint" />
+            <mxPoint x="320" y="180" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
