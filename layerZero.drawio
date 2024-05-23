@@ -1,50 +1,50 @@
-<mxfile host="app.diagrams.net" modified="2024-05-22T09:07:02.446Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="QIbgMo8hIWOODS0DG9sV" version="24.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-23T08:18:05.958Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="uTPU3zu7JgsXvj2cv5C7" version="24.4.6" type="github">
   <diagram name="第 1 页" id="0N3-7GCmC0MNpS1LOGUZ">
-    <mxGraphModel dx="1735" dy="976" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1363" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-4" value="" style="group" vertex="1" connectable="0" parent="1">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-4" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="50" y="190" width="170" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;区块链A&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="Fsoi2ilbe3J_ZA-8UHdk-4">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;区块链A&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="Fsoi2ilbe3J_ZA-8UHdk-4" vertex="1">
           <mxGeometry y="-40" width="170" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-3" value="端点合约" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Fsoi2ilbe3J_ZA-8UHdk-4">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-3" value="端点合约" style="rounded=0;whiteSpace=wrap;html=1;" parent="Fsoi2ilbe3J_ZA-8UHdk-4" vertex="1">
           <mxGeometry x="90" y="50" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-8" value="" style="group" vertex="1" connectable="0" parent="1">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-8" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="640" y="190" width="170" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-9" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;区块链B&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="Fsoi2ilbe3J_ZA-8UHdk-8">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-9" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;区块链B&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="Fsoi2ilbe3J_ZA-8UHdk-8" vertex="1">
           <mxGeometry y="-40" width="170" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-10" value="端点合约" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Fsoi2ilbe3J_ZA-8UHdk-8">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-10" value="端点合约" style="rounded=0;whiteSpace=wrap;html=1;" parent="Fsoi2ilbe3J_ZA-8UHdk-8" vertex="1">
           <mxGeometry y="50" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-11" value="验证器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-11" value="验证器" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="260" y="280" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-12" value="验证器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-12" value="验证器" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="260" y="120" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-13" value="区块链A" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-13" value="区块链A" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="20" y="460" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-14" value="事件捕获程序" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="196" y="460" width="100" height="300" as="geometry" />
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-14" value="事件捕获程序" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="192" y="460" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-15" value="网络层" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="372" y="460" width="100" height="300" as="geometry" />
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-15" value="网络层" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="364" y="460" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-17" value="预言机" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="548" y="460" width="100" height="300" as="geometry" />
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-17" value="预言机" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="708" y="460" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-18" value="中继器" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="724" y="460" width="100" height="300" as="geometry" />
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-18" value="中继器" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="536" y="460" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-19" value="区块链B" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="900" y="460" width="100" height="300" as="geometry" />
+        <mxCell id="Fsoi2ilbe3J_ZA-8UHdk-19" value="区块链B" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="880" y="460" width="100" height="300" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
