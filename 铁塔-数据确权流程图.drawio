@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-10T10:01:02.953Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="q8IyJ1gYfeZCrBOjiWNb" version="24.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-10T10:02:09.506Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="XVh3H15yF4BvkrPObXjj" version="24.5.5" type="github">
   <diagram name="第 1 页" id="XVFi17vBp5Y42zeDhlXB">
     <mxGraphModel dx="596" dy="336" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -13,7 +13,7 @@
         <mxCell id="EDzq5u1I3e7pyLrrv-iS-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="EDzq5u1I3e7pyLrrv-iS-2" target="EDzq5u1I3e7pyLrrv-iS-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="EDzq5u1I3e7pyLrrv-iS-2" value="计算文件hash" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="EDzq5u1I3e7pyLrrv-iS-2" value="计算文件hash，组装上链数据" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="210" y="230" width="100" height="50" as="geometry" />
         </mxCell>
         <mxCell id="EDzq5u1I3e7pyLrrv-iS-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="EDzq5u1I3e7pyLrrv-iS-4" target="EDzq5u1I3e7pyLrrv-iS-13">
