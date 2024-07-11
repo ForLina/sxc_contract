@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-10T10:02:09.506Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="XVh3H15yF4BvkrPObXjj" version="24.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-11T00:57:46.711Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="ol2B40-r_nkr3Ji1hHyb" version="24.5.5" type="github" pages="2">
   <diagram name="第 1 页" id="XVFi17vBp5Y42zeDhlXB">
     <mxGraphModel dx="596" dy="336" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -23,6 +23,35 @@
           <mxGeometry x="210" y="310" width="100" height="50" as="geometry" />
         </mxCell>
         <mxCell id="EDzq5u1I3e7pyLrrv-iS-13" value="完成" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="210" y="390" width="100" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="XQcjrRY4BTn0tDCiadOz" name="第 2 页">
+    <mxGraphModel dx="867" dy="488" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dEY_yh_FPpw1pflBIQTM-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="dEY_yh_FPpw1pflBIQTM-1" target="dEY_yh_FPpw1pflBIQTM-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dEY_yh_FPpw1pflBIQTM-1" value="输入文件哈希" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="210" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dEY_yh_FPpw1pflBIQTM-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dEY_yh_FPpw1pflBIQTM-2" target="dEY_yh_FPpw1pflBIQTM-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dEY_yh_FPpw1pflBIQTM-2" value="根据哈希，查询数据库，得到此哈希上链的业务ID" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="210" y="230" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dEY_yh_FPpw1pflBIQTM-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="dEY_yh_FPpw1pflBIQTM-3" target="dEY_yh_FPpw1pflBIQTM-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dEY_yh_FPpw1pflBIQTM-3" value="调用取证接口，从链上获取存证内容" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="210" y="310" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dEY_yh_FPpw1pflBIQTM-4" value="返回存在内容" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="210" y="390" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
